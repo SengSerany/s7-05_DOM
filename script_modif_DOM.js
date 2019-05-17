@@ -38,8 +38,6 @@ function deleteLastCards() {
 	}
 }
 
-
-
 function changeCardsText() {
 
 	let cardText = document.querySelectorAll("p.card-text");
@@ -57,9 +55,6 @@ function changeCardsText() {
 		}
 	}
 }
-
-
-
 
 function changeViewButtons() {
 	let parent = document.querySelectorAll("div.btn-group");
@@ -80,6 +75,18 @@ function changeViewButtonsCaro() {
 	}
 }
 
+function addRow() {
+	let parent = document.getElementsByClassName("container")[0];
+	let row = document.createElement("div");
+	row.classList.add("row")
+	let rowCards = document.querySelectorAll("div.album")[0].getElementsByClassName("container")[0].getElementsByClassName("row")[0];
+	let thirdCard = rowCards.childNodes[5];
+	// a partir d'ici c'est foireux, à corriger (peut etre aussi avant mais ça devrait aller)
+	row.innerHTML = thirdCard;
+	parent.innerHTML = row;
+	row.textContent="test";	
+};
+
 
 changeTitles();
 changeCallToActions();
@@ -88,4 +95,5 @@ populateImages();
 deleteLastCards();
 changeCardsText();
 changeViewButtons();
+addRow();
 
