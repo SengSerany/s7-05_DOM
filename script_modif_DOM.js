@@ -75,18 +75,16 @@ function changeViewButtonsCaro() {
 	}
 }
 
-function addRow() {
-	let parent = document.getElementsByClassName("container")[0];
-	let row = document.createElement("div");
-	row.classList.add("row")
-	let rowCards = document.querySelectorAll("div.album")[0].getElementsByClassName("container")[0].getElementsByClassName("row")[0];
-	let thirdCard = rowCards.childNodes[5];
-	// a partir d'ici c'est foireux, à corriger (peut etre aussi avant mais ça devrait aller)
-	row.innerHTML = thirdCard;
-	parent.innerHTML = row;
-	row.textContent="test";	
-};
 
+
+function addRow() {
+
+	let row1 = document.querySelectorAll("div.album")[0].getElementsByClassName("container")[0].getElementsByClassName("row")[0];
+	row1.insertAdjacentHTML('afterend', '<div class="row"></div>');
+	row2 =  document.querySelectorAll("div.album")[0].getElementsByClassName("container")[0].getElementsByClassName("row")[1];
+	let thirdCard = row1.childNodes[5];
+	row2.appendChild(thirdCard);
+}
 
 changeTitles();
 changeCallToActions();
@@ -96,4 +94,5 @@ deleteLastCards();
 changeCardsText();
 changeViewButtons();
 addRow();
+
 
