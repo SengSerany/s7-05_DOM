@@ -8,11 +8,11 @@ function changeTitles() {
 
 function changeCallToActions() {
 	let callToAction = document.querySelectorAll("a.btn-primary");
-	callToAction[0].textContent = "Fuyez";
+	callToAction[0].textContent = "Coucou THP";
 	callToAction[0].href = "http://www.thehackingproject.org";
 
 	let callToActionSecondary = document.querySelectorAll("a.btn-secondary");
-	callToActionSecondary[0].textContent = "Mais vraiment, même ici c'est mieux";
+	callToActionSecondary[0].textContent = "Coucou Pôle Emploi";
 	callToActionSecondary[0].href = "https://www.pole-emploi.fr/accueil/";
 };
 
@@ -39,8 +39,53 @@ function deleteLastCards() {
 }
 
 
+
+function changeCardsText() {
+
+	let cardText = document.querySelectorAll("p.card-text");
+	for(i = 0; i < 3; i++) {
+		switch(i){
+			case 0: 
+			cardText[i].textContent = "L’HyperText Markup Language, généralement abrégé HTML, est le langage de balisage conçu pour représenter les pages web"
+			break;
+			case 1:
+			cardText[i].textContent = "Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets, forment un langage informatique qui décrit la présentation des documents HTML et XML"
+			break;
+			case 2:
+			cardText[i].textContent = "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives mais aussi pour les serveurs. C'est un langage orienté objet à prototype."
+			break;
+		}
+	}
+}
+
+
+
+
+function changeViewButtons() {
+	let parent = document.querySelectorAll("div.btn-group");
+
+	parent.forEach((div, index) => {
+		let child = div.firstElementChild;
+		child.classList.remove('btn-outline-secondary');
+		child.classList.add('btn-success');
+	})
+}
+
+function changeViewButtonsCaro() {
+	let btnGroup = document.getElementsByClassName("btn-group")
+	
+	for(i = 0; i <= btnGroup.length; i++) {
+		btnGroup[i].getElementsByTagName("button")[0].classList.remove('btn-outline-secondary')
+		btnGroup[i].getElementsByTagName("button")[0].classList.add('btn-success')
+	}
+}
+
+
 changeTitles();
 changeCallToActions();
 changeLogoName();
 populateImages();
 deleteLastCards();
+changeCardsText();
+changeViewButtons();
+

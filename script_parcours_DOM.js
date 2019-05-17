@@ -27,5 +27,5 @@ console.log(document.querySelectorAll("ol>li.compte-moi").length);
 
 console.log("La page contient un seul élément <div>. Celui-ci contient 2 éléments 'unordered list' ou <ul>. Dans le second <ul>, le premier élément de la liste (tag <li>) est caché visuellement de l'utilisateur mais toi, tu peux en récupérer le contenu. Affiche-le dans la console.")
 let myUl2 = document.getElementsByTagName("div")[0].getElementsByTagName("ul")[1].getElementsByTagName("li")[0]
-console.log(myUl2)
+console.log(myUl2.textContent)
 
